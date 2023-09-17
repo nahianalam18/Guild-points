@@ -1,20 +1,26 @@
-<table mat-table [dataSource]="tableData">
-    <ng-container matColumnDef="name">
-        <th mat-header-cell class="header-cell" *matHeaderCellDef> Player name </th>
-        <td mat-cell class="label-text" *matCellDef="let element"> {{element.playerName}} </td>
-    </ng-container>
+<div class="page-container">
+    <table mat-table [dataSource]="tableData">
+        <ng-container matColumnDef="name">
+            <th mat-header-cell class="header-cell" *matHeaderCellDef> Player name </th>
+            <td mat-cell class="label-text" *matCellDef="let element"> {{element.playerName}} </td>
+        </ng-container>
 
-    <ng-container matColumnDef="actualGps">
-        <th mat-header-cell *matHeaderCellDef> Actual GPs </th>
-        <td mat-cell class="label-text" *matCellDef="let element"> {{element.actualGps}} </td>
-    </ng-container>
+        <ng-container matColumnDef="actualGps">
+            <th mat-header-cell *matHeaderCellDef> Actual GPs </th>
+            <td mat-cell class="label-text" *matCellDef="let element"> {{element.actualGps}} </td>
+        </ng-container>
 
-    <ng-container matColumnDef="oldGps">
-        <th mat-header-cell *matHeaderCellDef> Old GPs </th>
-        <td mat-cell class="label-text"*matCellDef="let element"> {{element.oldGps}} </td>
-    </ng-container>
+        <ng-container matColumnDef="mazeAps">
+            <th mat-header-cell class="header-cell" *matHeaderCellDef> Maze Aps </th>
+            <td mat-cell class="label-text" *matCellDef="let element"> {{element.mazeAps}} </td>
+        </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
-<button mat-button (click)="onButtonClick()">Basic</button>
+        <ng-container matColumnDef="oldGps">
+            <th mat-header-cell *matHeaderCellDef> Old GPs </th>
+            <td mat-cell class="label-text"*matCellDef="let element"> {{element.oldGps}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

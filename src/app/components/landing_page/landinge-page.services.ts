@@ -37,8 +37,9 @@ export class LandingePageService {
             if (name.length == 0) continue;
 
             const actualGps = cleanValue[1];
-            const oldGps = cleanValue[cleanValue.length-1]!;
-            const tableData = new GPPointsTableData(name, actualGps, oldGps);
+            const oldGps = cleanValue[cleanValue.length-1];
+            const mazeAps = cleanValue[2];
+            const tableData = new GPPointsTableData(name,mazeAps, actualGps, oldGps);
             dataICareAbout.push(tableData);
         }
        
