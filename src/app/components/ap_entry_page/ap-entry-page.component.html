@@ -1,3 +1,29 @@
 <div class="page-container">
-    <h1>Gp entry page</h1>
+    <mat-form-field *ngIf="!renderApInsertionUI" class="example-full-width">
+        <mat-label>Authorization key</mat-label>
+        <input matInput placeholder="Your authorization key" (change)="enterAuthKey($event)">
+    </mat-form-field>
+    <div *ngIf="shouldShowWrongAuthMessage">
+        <h1>Nice try. Get out of here</h1>
+    </div>
+
+    <div *ngIf="renderApInsertionUI">
+        <mat-form-field>
+            <mat-label>Choose maze</mat-label>
+            <mat-select (selectionChange)="onSelection($event)">
+                <mat-option value="CA">Chaos Argent</mat-option>
+                <mat-option value="DW">Demonic World</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <mat-label>Player names</mat-label>
+              <textarea (change)="onChange($event)" matInput placeholder="iSauro, iKrozz, iRoll"></textarea>
+            </mat-form-field>
+        </form>
+
+        <button mat-stroked-button class="Primary">Submit</button>
+    </div>
 </div>
