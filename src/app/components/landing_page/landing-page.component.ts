@@ -11,9 +11,9 @@ export class LandingPageComponent implements OnInit {
   tableData : GPPointsTableData[] = [];
   displayedColumns: string[] = ['name', 'actualGps', 'mazeAps', 'oldGps'];
 
-  constructor(private serv: LandingePageService) {}
+  constructor(private service: LandingePageService) {}
 
   async ngOnInit() {
-    this.tableData = await this.serv.getTableData();
+    this.tableData = await this.service.getTableData();
   }
 }

@@ -35,7 +35,6 @@ export class LandingePageService {
 
             const name = cleanValue[0];
             if (name.length == 0) continue;
-
             const actualGps = cleanValue[1];
             const oldGps = cleanValue[cleanValue.length-1];
             const mazeAps = cleanValue[2];
@@ -44,5 +43,5 @@ export class LandingePageService {
         }
        
         return dataICareAbout;
-}
+    }
 }

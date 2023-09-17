@@ -17,12 +17,26 @@
         </mat-form-field>
         <br>
         
+        <div *ngFor="let player of addedPlayers">
+            <li>{{player}}</li>
+        </div>
         <form class="example-form">
             <mat-form-field class="example-full-width">
-              <mat-label>Player names</mat-label>
-              <textarea (change)="onChange($event)" matInput placeholder="iSauro, iKrozz, iRoll"></textarea>
+              <mat-label>Player</mat-label>
+              <input #input
+                     type="text"
+                     placeholder="Pick one"
+                     matInput
+                     [matAutocomplete]="auto"
+                     (input)="filter()"
+                     (focus)="select()">
+              <mat-autocomplete requireSelection #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
             </mat-form-field>
-        </form>
+          </form>
 
         <button mat-stroked-button class="Primary">Submit</button>
     </div>
